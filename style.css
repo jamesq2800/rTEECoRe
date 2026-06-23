@@ -191,7 +191,6 @@ ul { list-style: none; }
   background: var(--rush-green-light);
   color: var(--rush-green-dark);
 }
-.has-dropdown:hover .dropdown { display: block; }
 
 .nav-toggle {
   display: none;
