@@ -10,10 +10,12 @@ document.querySelectorAll('.main-nav a').forEach(link => {
   link.addEventListener('click', () => nav.classList.remove('open'));
 });
 
-// Dropdown: show on mouseenter, hide on mouseleave with a small delay
+// Dropdown: ensure all closed on load, then toggle on hover
 document.querySelectorAll('.has-dropdown').forEach(item => {
   const dropdown = item.querySelector('.dropdown');
   let hideTimer;
+
+  dropdown.style.display = 'none';
 
   item.addEventListener('mouseenter', () => {
     clearTimeout(hideTimer);
