@@ -2,17 +2,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --blue: #5BA3D9;
-  --blue-dark: #3A7FB5;
-  --blue-light: rgba(91, 163, 217, 0.12);
-  --blue-glow: rgba(91, 163, 217, 0.25);
-  --dark: #0B0D0F;
-  --dark-2: #111417;
-  --dark-3: #181C20;
-  --dark-4: #1E2329;
-  --dark-5: #252B32;
-  --border: rgba(255,255,255,0.08);
-  --border-blue: rgba(91, 163, 217, 0.3);
+  --blue: #5BC8FF;
+  --blue-dark: #3AAEE0;
+  --blue-light: rgba(91, 200, 255, 0.12);
+  --blue-glow: rgba(91, 200, 255, 0.3);
+  --dark: #08090B;
+  --dark-2: #0E1115;
+  --dark-3: #151920;
+  --dark-4: #1B2028;
+  --dark-5: #222830;
+  --border: rgba(255,255,255,0.1);
+  --border-blue: rgba(91, 200, 255, 0.4);
   --white: #FFFFFF;
   --gray-300: rgba(255,255,255,0.85);
   --gray-400: rgba(255,255,255,0.65);
@@ -210,23 +210,33 @@ ul { list-style: none; }
 .hero {
   position: relative;
   background: var(--dark);
-  min-height: 580px;
+  min-height: 600px;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
-.hero::before {
+.hero-map {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-map svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(91,163,217,0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(91,163,217,0.04) 0%, transparent 60%);
+  background: linear-gradient(to right, rgba(8,9,11,0.92) 35%, rgba(8,9,11,0.5) 70%, rgba(8,9,11,0.2) 100%);
+  z-index: 1;
 }
 .hero-overlay { display: none; }
 .hero-content {
   position: relative;
   z-index: 2;
+  pointer-events: auto;
   max-width: 680px;
   padding-top: 60px;
   padding-bottom: 60px;
