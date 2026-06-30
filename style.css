@@ -847,6 +847,85 @@ ul { list-style: none; }
   line-height: 1.75;
 }
 
+/* ── Theme Toggle Button ── */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--gray-400);
+  cursor: pointer;
+  padding: 7px 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: var(--blue-light);
+}
+/* Dark mode: show sun icon (click to go light) */
+.icon-sun { display: block; }
+.icon-moon { display: none; }
+/* Light mode: show moon icon (click to go dark) */
+[data-theme="light"] .icon-sun { display: none; }
+[data-theme="light"] .icon-moon { display: block; }
+
+/* ── Light Theme ── */
+[data-theme="light"] {
+  --blue: #1A8AC8;
+  --blue-dark: #1470A8;
+  --blue-light: rgba(26, 138, 200, 0.09);
+  --blue-glow: rgba(26, 138, 200, 0.2);
+  --border-blue: rgba(26, 138, 200, 0.3);
+  --dark: #FFFFFF;
+  --dark-2: #F3F5F8;
+  --dark-3: #FFFFFF;
+  --dark-4: #E8EBF0;
+  --dark-5: #DDE1E9;
+  --border: rgba(0,0,0,0.1);
+  --white: #0B1120;
+  --gray-300: rgba(11,17,32,0.9);
+  --gray-400: rgba(11,17,32,0.65);
+  --gray-500: rgba(11,17,32,0.45);
+}
+
+[data-theme="light"] .site-header {
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 1px 12px rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .site-footer {
+  background: #1A2235;
+  border-top: none;
+}
+
+[data-theme="light"] .hero {
+  background: #0B1120;
+}
+
+[data-theme="light"] .hero::after {
+  background: linear-gradient(to right, rgba(11,17,32,0.92) 35%, rgba(11,17,32,0.5) 70%, rgba(11,17,32,0.2) 100%);
+}
+
+[data-theme="light"] .about-strip {
+  background: var(--dark-2);
+  border-color: var(--border);
+}
+
+[data-theme="light"] .mission { background: #F3F5F8; }
+[data-theme="light"] .content-section { background: #F3F5F8; }
+[data-theme="light"] .cta-banner { background: #1A2235; border: none; }
+[data-theme="light"] .cta-banner h2,
+[data-theme="light"] .cta-banner p { color: rgba(255,255,255,0.9); }
+[data-theme="light"] .page-hero { background: #1A2235; border-bottom: none; }
+[data-theme="light"] .page-hero h1,
+[data-theme="light"] .page-hero p { color: rgba(255,255,255,0.9); }
+[data-theme="light"] .dropdown { background: #fff; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+[data-theme="light"] .footer-logo span { color: var(--blue); }
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .strip-grid { grid-template-columns: repeat(2, 1fr); }
