@@ -125,8 +125,8 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 .logo-img {
-  height: 52px;
-  width: 52px;
+  height: 60px;
+  width: auto;
   object-fit: contain;
   border-radius: 6px;
 }
